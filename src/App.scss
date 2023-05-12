@@ -1,0 +1,196 @@
+@import 'App.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+$Big: 'Big Shoulders Display', cursive;
+$Lexend: 'Lexend Deca', sans-serif;
+
+//Colors
+
+    //Primary
+
+$BrightOrange: hsl(31, 77%, 52%);
+$Darkcyan: hsl(184, 100%, 22%);
+$VerydarkCyan: hsl(179, 100%, 13%);
+
+    //Neutral
+
+$TransparentWhite/*(paragraphs)*/: hsla(0, 0%, 100%, 0.75);
+$VeryLightGray/*(background, headings, buttons)*/: hsl(0, 0%, 95%);
+
+//Reset CSS
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+//Styling
+
+html {
+    height: 100vh;
+    //For browsers that support SVH format
+    height: 100svh;
+    width: 100vw;
+}
+
+body {
+    height: 100vh;
+    //For browsers that support SVH format
+    height: 100svh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+div {
+    display: flex;
+    width: auto;
+    margin: 0 8em 0 8em;
+}
+
+div>section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: 3em;
+    padding: 2.5em;
+
+    &:first-of-type {
+        background-color: $BrightOrange;
+        border-radius: 10px 0 0 10px;
+    }
+
+    &:nth-of-type(2) {
+        background-color: $Darkcyan;
+    }
+
+    &:nth-of-type(3) {
+        background-color: $VerydarkCyan;
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+div>section>header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+div>section>header>h1 {
+    font-family: $Big;
+    color: $VeryLightGray;
+    font-size: clamp(1rem, 1rem + 3vw, 2.3rem);
+}
+
+div>section>main>p {
+    color: $TransparentWhite;
+    font-family: $Lexend;
+    line-height: 2.1;
+}
+
+div>section>footer {
+    padding-bottom: 1em;
+
+}
+div>section>footer>button {
+    border: 1px solid $VeryLightGray;
+    background-color: $VeryLightGray;
+    border-radius: 20px;
+    padding: 1em 2em 1em 2em;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+    }
+}
+
+.First {
+    color: $BrightOrange;
+}
+
+.Second {
+    color: $Darkcyan
+}
+
+.Third {
+    color: $VerydarkCyan;
+}
+
+@media (max-width: 800px) {
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        height: fit-content;
+    }
+    
+
+    div {
+        flex-direction: column;
+        margin: 2em;
+    }
+
+    div>section{
+        row-gap: 2em;
+
+        &:first-of-type {
+            border-radius: 10px 10px 0 0;
+        }
+
+        &:last-of-type {
+            border-radius: 0 0 10px 10px;
+        }
+    }
+
+    div>section>main>p {
+        line-height: 1.7;
+    }
+}
